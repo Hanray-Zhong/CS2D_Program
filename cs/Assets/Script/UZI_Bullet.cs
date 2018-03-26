@@ -2,19 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UZI_Bullet : MonoBehaviour {
-    public float damage;
+public class UZI_bullet : MonoBehaviour {
 
-    private void OnCollisionEnter(Collider other)
+    private float damage = 15;
+
+    private void OnTriggerEnter(Collider other)
     {
         GameObject.Destroy(gameObject);
+
         Unit u = other.GetComponent<Unit>();
         if (u != null)
             u.ApplyDamage(damage);
+        else
+            return;
     }
 
     private void Update()
     {
-        GameObject.Destroy(gameObject, 1.5f);
+        GameObject.Destroy(gameObject, 2);
     }
 }

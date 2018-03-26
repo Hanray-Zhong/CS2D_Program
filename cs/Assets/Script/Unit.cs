@@ -25,7 +25,8 @@ public class Unit : MonoBehaviour {
 
     public void Destruct()
     {
-        Instantiate(deadBody, transform.position, transform.rotation);
+        GameObject dead = Instantiate(deadBody, transform.position, transform.rotation);
+        dead.transform.forward = new Vector3(0, 1, 0);
         Destroy(gameObject);
         isDead = false;
     }

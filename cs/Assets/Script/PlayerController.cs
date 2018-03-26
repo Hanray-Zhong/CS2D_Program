@@ -44,10 +44,6 @@ public class PlayerController : MonoBehaviour {
         shootCoolDown++;
         if (Input.GetKey(KeyCode.Mouse0) && shootCoolDown >= w.bulletSpeed)
         {
-            Debug.Log("shoot");
-            Debug.Log(w.bulletDamege);
-            Debug.Log(w.bulletSpeed);
-            Debug.Log(w.bulletNumber);
             shootCoolDown = 0;
             w.Shoot();
         }
