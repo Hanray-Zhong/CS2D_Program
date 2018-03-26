@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour {
-    public float speed;
+    private float speed = 5;
     private Transform transform;
     private float shootCoolDown = 0;       //射击冷却
     Weapons w;
@@ -34,11 +34,8 @@ public class PlayerController : MonoBehaviour {
         obj.y = 0;
         Vector3 myMouse = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y);
         Vector3 direction = myMouse - obj;
-        //Debug.Log(direction);
         direction = direction.normalized;
         transform.forward = direction;
-        //Debug.Log(myMouse);
-        //Debug.Log(obj);
 
         /****************武器**************/
         shootCoolDown++;

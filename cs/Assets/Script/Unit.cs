@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Unit : MonoBehaviour {
 
-    public float health = 100;             //生命值
+    private float health = 100;             //生命值
     public GameObject deadBody;
     private bool isDead = false;
 
@@ -23,7 +23,7 @@ public class Unit : MonoBehaviour {
         }
     }
 
-    public void Destruct()
+    private void Destruct()
     {
         GameObject dead = Instantiate(deadBody, transform.position, transform.rotation);
         dead.transform.forward = new Vector3(0, 1, 0);
