@@ -2,10 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum Team
+{
+    T,
+    CT
+}
+
 public class Unit : MonoBehaviour {
+    public GameObject deadBody;
+    public Team team;
 
     private float health = 100;             //生命值
-    public GameObject deadBody;
     private bool isDead = false;
 
     public void ApplyDamage(float damage)

@@ -2,20 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour {
-    private float speed = 5;
-    private Transform transform;
+public class PlayerController : Unit {
+    private float speed = 5;                //移动速度
     private float shootCoolDown = 0;       //射击冷却
-    Weapons w;
+    private Transform transform;           //定义transfor组件
+    private Weapons w;                     //定义weapon组件
+    private LayerMask enemyMask;           //定义layermask组件
 
-    // Use this for initialization
     void Start () {
-        transform = gameObject.GetComponent<Transform>();
-        w = gameObject.GetComponent<Weapons>();
-        w.ChooseWeapon();
+        transform = gameObject.GetComponent<Transform>();       //获取transform组件
+        w = gameObject.GetComponent<Weapons>();                 //实例化w
+        w.ChooseWeapon();                                       //拿上枪
+        enemyMask = new TeamManager().ChooseEnemy(team);        //选择敌人
 	}
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         /**************控制移动****************/

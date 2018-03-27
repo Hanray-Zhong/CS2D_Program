@@ -9,7 +9,7 @@ public class UZI_bullet : MonoBehaviour {
     private void OnTriggerEnter(Collider other)
     {
         GameObject.Destroy(gameObject);
-
+        //Debug.Log(other.name);
         Unit u = other.GetComponent<Unit>();
         if (u != null)
             u.ApplyDamage(damage);

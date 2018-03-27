@@ -246,9 +246,10 @@
     <Compile Include="Assets\Script\Bullet\AWP_bullet.cs" />
     <Compile Include="Assets\Script\Bullet\M249_bullet.cs" />
     <Compile Include="Assets\Script\Bullet\UZI_bullet.cs" />
-    <Compile Include="Assets\Script\CameraController.cs" />
+    <Compile Include="Assets\Script\Camera\CameraController.cs" />
     <Compile Include="Assets\Script\DestroyDeadBody.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
+    <Compile Include="Assets\Script\TeamManager.cs" />
     <Compile Include="Assets\Script\Unit.cs" />
     <Compile Include="Assets\Script\Weapons.cs" />
   </ItemGroup>

@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 54118257581589582}
   - component: {fileID: 114034510090414670}
   m_Layer: 0
-  m_Name: DeadBody
+  m_Name: DeadBodyT
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

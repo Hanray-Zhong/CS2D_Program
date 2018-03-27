@@ -2,25 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum weapons                                    //建立所有枪的枚举
+{
+    UZI,
+    Ak47,
+    M249,
+    AWP,
+}
+
 public class Weapons : MonoBehaviour {
-    private GameObject bullet;
-    private float ShootForce = 100;
-    public Transform ShootPoint;
+    private GameObject bullet;                        //对应枪的子弹
+    private float ShootForce = 100;                   //射出子弹的力
+    public LayerMask enemyLayer;                     //敌人的layermask
 
-    public enum weapons
-    {
-        UZI,
-        Ak47,
-        M249,
-        AWP,
-    }
-    public weapons weaponInHand;
+    public Transform ShootPoint;                      //子弹射出位置方向
+    public weapons weaponInHand;                      //拿上的武器
 
-    public float bulletSpeed;
-    public float bulletDamege;
-    public float bulletNumber;
-    public float bulletTotalNumber;
+    public float bulletSpeed;                         //子弹射速
+    public float bulletDamege;                        //子弹威力
+    public float bulletNumber;                        //子弹弹夹数
+    public float bulletTotalNumber;                   //子弹总数
 
+    /**************选择枪，得到数据*************/
     public void ChooseWeapon()
     {
         if (weaponInHand == weapons.UZI)
@@ -56,11 +59,16 @@ public class Weapons : MonoBehaviour {
             bullet = (GameObject)Resources.Load("Prefabs/bulletAWP", typeof(GameObject));
         }
     }
-
+    /***************得到敌人的layermask*****************/
+    public void Init(Team team)
+    {
+        enemyLayer = new TeamManager().ChooseEnemy(team);
+    }
+    /******************开枪*********************/
     public void Shoot()
     {
-        GameObject newShell = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation) as GameObject;
+        GameObject newBullet = Instantiate(bullet, ShootPoint.position, ShootPoint.rotation) as GameObject;
         Vector3 shootDirection = ShootPoint.forward;
-        newShell.GetComponent<Rigidbody>().AddForce(shootDirection * ShootForce, ForceMode.Impulse);
+        newBullet.GetComponent<Rigidbody>().AddForce(shootDirection * ShootForce, ForceMode.Impulse);
     }
 }
