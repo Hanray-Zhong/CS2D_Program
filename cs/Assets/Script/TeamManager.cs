@@ -22,4 +22,18 @@ public class TeamManager : MonoBehaviour {
         return enemy;
     }
 	
+    public int GetEnemyInt(Team team)
+    {
+        int enemy_layermask_int = 0;
+        switch (team)
+        {
+            case Team.CT:
+                enemy_layermask_int = 8;
+                break;
+            case Team.T:
+                enemy_layermask_int = 9;
+                break;
+        }
+        return enemy_layermask_int;
+    }
 }

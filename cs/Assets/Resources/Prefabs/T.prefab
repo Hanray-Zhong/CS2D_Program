@@ -217,7 +217,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1298020801748916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.5, y: 4.416, z: -13.07}
+  m_LocalPosition: {x: -24.349174, y: 4.87, z: -8.059317}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4767431290973400}
@@ -232,13 +232,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1325064703426738}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.7789998, y: 0.41564512, z: 1.7820015}
+  m_LocalRotation: {x: -0, y: -0.063602924, z: -0, w: 0.99797535}
+  m_LocalPosition: {x: 0.7789993, y: 0.41564512, z: 1.7820015}
   m_LocalScale: {x: 0.054031424, y: 0.054031443, z: 0.054031443}
   m_Children: []
   m_Father: {fileID: 4080369143543752}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: -7.293, z: 0}
 --- !u!4 &4757682045385174
 Transform:
   m_ObjectHideFlags: 1
@@ -681,7 +681,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deadBody: {fileID: 1360741070203346, guid: 45df1f2c9c84f8145bf57a5e6b34c168, type: 2}
   team: 0
-  searchRange: 1000
 --- !u!114 &114508927380528778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -710,7 +709,7 @@ NavMeshAgent:
   m_GameObject: {fileID: 1298020801748916}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 3.1
+  m_Radius: 1.79
   m_Speed: 5
   m_Acceleration: 8
   avoidancePriority: 50
