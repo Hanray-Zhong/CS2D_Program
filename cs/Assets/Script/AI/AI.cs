@@ -9,21 +9,27 @@ public class AI : Unit {
     private float speed = 5;                //移动速度
     private float attackRange = 15;         //攻击范围
     private float shootCoolDown = 0;        //射击冷却
+    private float renewBullet_time = 0;     //换弹时间
     private NavMeshAgent nma;               //自动寻路
+    private AudioSource[] audioSource;       //定义audioSourse组件
 
     private GameObject enemy;               //射击目标
     private Weapons w;
     private LayerMask enemyLayer;           //敌人的层
     private Ray shootWay;                   //用射线模拟弹道
+    private int bulletNumber;
+    private int bulletTotalNumber;
 
     private void Start()
     {
         w = gameObject.GetComponent<Weapons>();
         w.ChooseWeapon();
-        w.Init(team);
+        bulletNumber = w.bulletNumber;                      //得到弹夹子弹数
+        bulletTotalNumber = w.bulletTotalNumber;            //得到总子弹数
         nma = gameObject.GetComponent<NavMeshAgent>();
         enemyLayer = new TeamManager().ChooseEnemy(team);
-        
+        audioSource = gameObject.GetComponents<AudioSource>();   //获取audioSourse组件
+
     }
 
     private void Update()
@@ -47,25 +53,24 @@ public class AI : Unit {
         {
             nma.ResetPath();
             gameObject.transform.LookAt(enemy.transform.position);
-            if (shootCoolDown >= w.bulletSpeed)     //判断子弹能否打到目标
+            if (shootCoolDown >= w.bulletSpeed && HaveBullet())     //判断子弹能否打到目标
             {
                 w.Shoot();
                 shootCoolDown = 0;
+                bulletNumber--;
+                audioSource[0].Play();
             }
         }
         shootCoolDown++;
+        if (!HaveBullet() && shootCoolDown >= w.bulletSpeed)
+        {
+            audioSource[1].Play();
+            shootCoolDown = 0;
+        }
         /******************************/
     }
 
-    /*
-    private void searchEnemy()
-    {
-        Collider[] cols = Physics.OverlapSphere(transform.position, searchRange, enemyLayer);
-        enemy = cols[Random.Range(0, cols.Length)].gameObject;
-    }
-    */
-    
-    private void getNearestEnemy()
+    private void getNearestEnemy()                           //将离自己最近的敌人设为目标
     {
         Collider[] cols = Physics.OverlapSphere(transform.position, searchRange, enemyLayer);
         float distance = 10000;
@@ -79,5 +84,29 @@ public class AI : Unit {
         }
         
     }
-    
+
+    private bool HaveBullet()                               //判断是否还有子弹
+    {
+        if (bulletNumber <= 0)
+        {
+            if (bulletTotalNumber > 0)
+            {
+                renewBullet_time++;                        //判断换子弹是否结束
+                if (renewBullet_time > w.renewBullet_time)
+                {
+                    bulletNumber = w.bulletNumber;
+                    bulletTotalNumber -= bulletNumber;
+                    renewBullet_time = 0;
+                    return true;
+                }
+                else
+                    return false;
+            }
+            else
+                return false;
+        }
+        else
+            return true;
+    }
+
 }

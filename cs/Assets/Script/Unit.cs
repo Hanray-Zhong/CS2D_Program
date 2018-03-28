@@ -26,7 +26,9 @@ public class Unit : MonoBehaviour {
         {
             isDead = true;
             if (isDead)
+            {
                 Destruct();
+            }
         }
     }
 
