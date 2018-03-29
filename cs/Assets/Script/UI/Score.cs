@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Score : MonoBehaviour
 {
@@ -98,7 +99,7 @@ public class Score : MonoBehaviour
             if (time >= 200)
             {
                 time = 0;
-                Application.LoadLevel("Versus Scene2");
+                Application.LoadLevel(SceneManager.GetActiveScene().name);
             }
         }
     }

@@ -28,5 +28,7 @@ public class Recorder : MonoBehaviour {
     public void ClearAllPrefs()
     {
         PlayerPrefs.DeleteAll();
+        CT_text.text = "0";
+        T_text.text = "0";
     }
 }
