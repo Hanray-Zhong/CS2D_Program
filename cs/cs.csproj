@@ -257,6 +257,7 @@
     <Compile Include="Assets\Script\Weapon\AWP_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\ChangeWeapon.cs" />
     <Compile Include="Assets\Script\Weapon\M249_bullet.cs" />
+    <Compile Include="Assets\Script\Weapon\Usp_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\UZI_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\Weapons.cs" />
   </ItemGroup>

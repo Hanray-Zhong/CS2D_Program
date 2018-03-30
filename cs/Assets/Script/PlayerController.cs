@@ -7,11 +7,14 @@ public class PlayerController : Unit {
     private float shootCoolDown = 0;       //射击冷却
     private float renewBullet_time = 0;    //换弹时间
     private Transform transform;           //定义transfor组件
-    private Weapons w;                     //定义weapon组件
     private LayerMask enemyMask;           //定义layermask组件
     private AudioSource[] audioSource;       //定义audioSourse组件
-    private int bulletNumber;
-    private int bulletTotalNumber;
+
+    public Weapons w;                     //定义weapon组件
+    public int bulletNumber;
+    public int bulletTotalNumber;
+    public GameObject Change_Bullet_text;
+    public GameObject No_bullet_text;
 
     void Start () {
         transform = gameObject.GetComponent<Transform>();       //获取transform组件
@@ -66,6 +69,7 @@ public class PlayerController : Unit {
         {
             if (bulletTotalNumber > 0)
             {
+                Change_Bullet_text.SetActive(false);
                 renewBullet_time++;                        //判断换子弹是否结束
                 if (renewBullet_time > w.renewBullet_time)
                 {
@@ -75,10 +79,16 @@ public class PlayerController : Unit {
                     return true;
                 }
                 else
+                {
+                    Change_Bullet_text.SetActive(true);
                     return false;
+                }
             }
             else
+            {
+                No_bullet_text.SetActive(true);
                 return false;
+            }
         }
         else
             return true;

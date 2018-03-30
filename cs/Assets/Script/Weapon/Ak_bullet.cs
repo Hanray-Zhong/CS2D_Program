@@ -8,8 +8,8 @@ public class Ak_bullet : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        GameObject.Destroy(gameObject);
-
+        Destroy(gameObject);
+        //Debug.Log(other.name);
         Unit u = other.GetComponent<Unit>();
         if (u != null)
             u.ApplyDamage(damage);

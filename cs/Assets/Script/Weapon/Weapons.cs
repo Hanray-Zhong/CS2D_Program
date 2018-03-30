@@ -4,6 +4,7 @@ using UnityEngine;
 
 public enum weapons                                    //建立所有枪的枚举
 {
+    Usp,
     UZI,
     Ak47,
     M249,
@@ -27,6 +28,15 @@ public class Weapons : MonoBehaviour {
     /**************选择枪，得到数据*************/
     public void ChooseWeapon()
     {
+        if (weaponInHand == weapons.Usp)
+        {
+            this.bulletSpeed = 20;
+            this.bulletDamege = 20;
+            this.bulletNumber = 12;
+            this.bulletTotalNumber = 48;
+            this.renewBullet_time = 120;
+            bullet = (GameObject)Resources.Load("Prefabs/bulletUsp", typeof(GameObject));
+        }
         if (weaponInHand == weapons.UZI)
         {
             this.bulletSpeed = 5;

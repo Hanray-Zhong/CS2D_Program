@@ -895,7 +895,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037534331529992}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.72, y: 2.6216354, z: 1.1985328}
@@ -1109,7 +1109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ShootPoint: {fileID: 4584970159149604}
-  weaponInHand: 1
+  weaponInHand: 0
   bulletSpeed: 0
   bulletDamege: 0
   bulletNumber: 0
