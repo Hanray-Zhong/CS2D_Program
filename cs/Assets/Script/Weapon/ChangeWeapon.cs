@@ -44,5 +44,12 @@ public class ChangeWeapon : MonoBehaviour {
             PC.bulletNumber = PC.w.bulletNumber;
             PC.bulletTotalNumber = PC.w.bulletTotalNumber;
         }
+        if (WeaponName.Equals("M3"))
+        {
+            weapon_of_player.weaponInHand = weapons.M3;
+            weapon_of_player.ChooseWeapon();
+            PC.bulletNumber = PC.w.bulletNumber;
+            PC.bulletTotalNumber = PC.w.bulletTotalNumber;
+        }
     }
 }

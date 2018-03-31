@@ -11,8 +11,8 @@ public enum Team
 public class Unit : MonoBehaviour {
     public GameObject deadBody;
     public Team team;
+    public float health = 100;             //生命值
 
-    private float health = 100;             //生命值
     private bool isDead = false;
 
     public void ApplyDamage(float damage)

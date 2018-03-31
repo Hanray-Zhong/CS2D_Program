@@ -6,46 +6,45 @@ public class PlayerController : Unit {
     private float speed = 5;               //移动速度
     private float shootCoolDown = 0;       //射击冷却
     private float renewBullet_time = 0;    //换弹时间
-    private Transform transform;           //定义transfor组件
-    private LayerMask enemyMask;           //定义layermask组件
-    private AudioSource[] audioSource;       //定义audioSourse组件
+    private Transform transf;           //定义transf组件
+    private AudioSource audioSource;       //定义audioSourse组件
 
     public Weapons w;                     //定义weapon组件
     public int bulletNumber;
     public int bulletTotalNumber;
     public GameObject Change_Bullet_text;
     public GameObject No_bullet_text;
+    public GameObject Audio_changeBullet;
 
     void Start () {
-        transform = gameObject.GetComponent<Transform>();       //获取transform组件
+        transf = gameObject.GetComponent<Transform>();       //获取transf组件
         w = gameObject.GetComponent<Weapons>();                 //实例化w
         w.ChooseWeapon();                                       //拿上枪
         bulletNumber = w.bulletNumber;                          //得到弹夹子弹数
         bulletTotalNumber = w.bulletTotalNumber;                //得到总子弹数
-        enemyMask = new TeamManager().ChooseEnemy(team);        //选择敌人
-        audioSource = gameObject.GetComponents<AudioSource>();   //获取audioSourse组件
+        audioSource = gameObject.GetComponent<AudioSource>();   //获取audioSourse组件
     }
 
     void FixedUpdate()
     {
         /**************控制移动****************/
         if (Input.GetKey(KeyCode.W) == true)
-            transform.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
         if (Input.GetKey(KeyCode.A) == true)
-            transform.Translate(Vector3.left * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.left * speed * Time.deltaTime, Space.Self);
         if (Input.GetKey(KeyCode.D) == true)
-            transform.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
         if (Input.GetKey(KeyCode.S) == true)
-            transform.Translate(Vector3.back * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.back * speed * Time.deltaTime, Space.Self);
 
         /**************控制旋转***************/
-        Vector3 obj = Camera.main.WorldToScreenPoint(transform.position);
+        Vector3 obj = Camera.main.WorldToScreenPoint(transf.position);
         obj.z = obj.y;
         obj.y = 0;
         Vector3 myMouse = new Vector3(Input.mousePosition.x, 0, Input.mousePosition.y);
         Vector3 direction = myMouse - obj;
         direction = direction.normalized;
-        transform.forward = direction;
+        transf.forward = direction;
 
         /****************武器**************/
         shootCoolDown++;
@@ -53,13 +52,8 @@ public class PlayerController : Unit {
         {
             shootCoolDown = 0;
             w.Shoot();
-            audioSource[0].Play();
+            audioSource.Play();
             bulletNumber--;
-        }
-        if (!HaveBullet() && shootCoolDown >= w.bulletSpeed)
-        {
-            audioSource[1].Play();
-            shootCoolDown = 0;
         }
     }
 
@@ -81,6 +75,9 @@ public class PlayerController : Unit {
                 else
                 {
                     Change_Bullet_text.SetActive(true);
+                    if (!Audio_changeBullet.activeInHierarchy)
+                        Audio_changeBullet.SetActive(true);
+
                     return false;
                 }
             }
@@ -91,6 +88,9 @@ public class PlayerController : Unit {
             }
         }
         else
+        {
+            Audio_changeBullet.SetActive(false);
             return true;
+        }
     }
 }

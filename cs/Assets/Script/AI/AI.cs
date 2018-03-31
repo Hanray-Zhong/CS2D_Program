@@ -6,13 +6,11 @@ using UnityEngine.AI;
 public class AI : Unit {
 
     private float searchRange = 1000;
-    private float speed = 5;                //移动速度
     private float attackRange = 15;         //攻击范围
     private float shootCoolDown = 0;        //射击冷却
     private float renewBullet_time = 0;     //换弹时间
     private NavMeshAgent nma;               //自动寻路
-    private AudioSource[] audioSource;       //定义audioSourse组件
-
+    private AudioSource audioSource;       //定义audioSourse组件
     private GameObject enemy;               //射击目标
     private Weapons w;
     private LayerMask enemyLayer;           //敌人的层
@@ -28,7 +26,7 @@ public class AI : Unit {
         bulletTotalNumber = w.bulletTotalNumber;            //得到总子弹数
         nma = gameObject.GetComponent<NavMeshAgent>();
         enemyLayer = new TeamManager().ChooseEnemy(team);
-        audioSource = gameObject.GetComponents<AudioSource>();   //获取audioSourse组件
+        audioSource = gameObject.GetComponent<AudioSource>();   //获取audioSourse组件
 
     }
 
@@ -58,15 +56,10 @@ public class AI : Unit {
                 w.Shoot();
                 shootCoolDown = 0;
                 bulletNumber--;
-                audioSource[0].Play();
+                audioSource.Play();
             }
         }
         shootCoolDown++;
-        if (!HaveBullet() && shootCoolDown >= w.bulletSpeed)
-        {
-            audioSource[1].Play();
-            shootCoolDown = 0;
-        }
         /******************************/
     }
 

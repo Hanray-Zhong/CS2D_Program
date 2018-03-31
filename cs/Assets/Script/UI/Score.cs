@@ -77,7 +77,7 @@ public class Score : MonoBehaviour
             readyReload = true;
             Time.timeScale = 0;
         }
-        else;
+        else return;
 
     }
 
@@ -99,7 +99,7 @@ public class Score : MonoBehaviour
             if (time >= 200)
             {
                 time = 0;
-                Application.LoadLevel(SceneManager.GetActiveScene().name);
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
     }

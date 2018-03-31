@@ -9,16 +9,16 @@ public enum weapons                                    //建立所有枪的枚�
     Ak47,
     M249,
     AWP,
+    M3,
 }
 
 public class Weapons : MonoBehaviour {
     private GameObject bullet;                        //对应枪的子弹
     private float ShootForce = 100;                   //射出子弹的力
-    /*public LayerMask enemyLayer;*/                     //敌人的layermask,可以设置队友是否造成伤害
+    /*public LayerMask enemyLayer;*/                  //敌人的layermask,可以设置队友是否造成伤害
 
     public Transform ShootPoint;                      //子弹射出位置方向
     public weapons weaponInHand;                      //拿上的武器
-
     public float bulletSpeed;                         //子弹射速
     public float bulletDamege;                        //子弹威力
     public int bulletNumber;                          //子弹弹夹数
@@ -66,21 +66,23 @@ public class Weapons : MonoBehaviour {
         }
         if (weaponInHand == weapons.AWP)
         {
-            this.bulletSpeed = 60;
+            this.bulletSpeed = 100;
             this.bulletDamege = 100;
             this.bulletNumber = 10;
             this.bulletTotalNumber = 30;
             this.renewBullet_time = 180;
             bullet = (GameObject)Resources.Load("Prefabs/bulletAWP", typeof(GameObject));
         }
+        if (weaponInHand == weapons.M3)
+        {
+            this.bulletSpeed = 50;
+            this.bulletDamege = 10;
+            this.bulletNumber = 8;
+            this.bulletTotalNumber = 32;
+            this.renewBullet_time = 180;
+            bullet = (GameObject)Resources.Load("Prefabs/bulletM3", typeof(GameObject));
+        }
     }
-    /***************得到敌人的layermask*****************/
-    /*
-    public void Init(Team team)
-    {
-        enemyLayer = new TeamManager().ChooseEnemy(team);
-    }
-    */
     /******************开枪*********************/
     public void Shoot()
     {

@@ -246,19 +246,24 @@
     <Compile Include="Assets\Script\DestroyDeadBody.cs" />
     <Compile Include="Assets\Script\PlayerController.cs" />
     <Compile Include="Assets\Script\TeamManager.cs" />
+    <Compile Include="Assets\Script\UI\BulletNumber.cs" />
+    <Compile Include="Assets\Script\UI\Health.cs" />
     <Compile Include="Assets\Script\UI\LoadLevel.cs" />
     <Compile Include="Assets\Script\UI\PlayerPrefabsClearer.cs" />
     <Compile Include="Assets\Script\UI\Recorder.cs" />
     <Compile Include="Assets\Script\UI\Score.cs" />
     <Compile Include="Assets\Script\UI\Settings.cs" />
     <Compile Include="Assets\Script\UI\Shopping.cs" />
+    <Compile Include="Assets\Script\UI\TotalNumber.cs" />
     <Compile Include="Assets\Script\Unit.cs" />
     <Compile Include="Assets\Script\Weapon\Ak_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\AWP_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\ChangeWeapon.cs" />
     <Compile Include="Assets\Script\Weapon\M249_bullet.cs" />
+    <Compile Include="Assets\Script\Weapon\M3_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\Usp_bullet.cs" />
     <Compile Include="Assets\Script\Weapon\UZI_bullet.cs" />
+    <Compile Include="Assets\Script\Weapon\WeaponAudio.cs" />
     <Compile Include="Assets\Script\Weapon\Weapons.cs" />
   </ItemGroup>
   <ItemGroup>
