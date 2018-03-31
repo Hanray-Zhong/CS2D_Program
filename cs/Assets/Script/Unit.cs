@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public enum Team
 {
@@ -12,6 +13,7 @@ public class Unit : MonoBehaviour {
     public GameObject deadBody;
     public Team team;
     public float health = 100;             //生命值
+    public Text Health_text;
 
     private bool isDead = false;
 
@@ -25,6 +27,7 @@ public class Unit : MonoBehaviour {
         else
         {
             isDead = true;
+            health = 0;
             if (isDead)
             {
                 Destruct();

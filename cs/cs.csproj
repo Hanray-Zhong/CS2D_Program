@@ -250,6 +250,7 @@
     <Compile Include="Assets\Script\UI\Health.cs" />
     <Compile Include="Assets\Script\UI\LoadLevel.cs" />
     <Compile Include="Assets\Script\UI\PlayerPrefabsClearer.cs" />
+    <Compile Include="Assets\Script\UI\QuitGame.cs" />
     <Compile Include="Assets\Script\UI\Recorder.cs" />
     <Compile Include="Assets\Script\UI\Score.cs" />
     <Compile Include="Assets\Script\UI\Settings.cs" />
