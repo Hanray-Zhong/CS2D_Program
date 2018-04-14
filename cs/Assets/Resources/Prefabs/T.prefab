@@ -763,6 +763,12 @@ MonoBehaviour:
   deadBody: {fileID: 1360741070203346, guid: 45df1f2c9c84f8145bf57a5e6b34c168, type: 2}
   team: 0
   health: 100
+  Health_text: {fileID: 0}
+  searchArea:
+  - {fileID: 1827339590157658, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 1729714082594368, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 1347745774197934, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 1047702402741494, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
 --- !u!114 &114508927380528778
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -781,12 +787,6 @@ MonoBehaviour:
   bulletNumber: 0
   bulletTotalNumber: 0
   renewBullet_time: 0
-  music:
-  - {fileID: 8300000, guid: 12861b439a7b4fe4c9e98b9549efdaa3, type: 3}
-  - {fileID: 8300000, guid: 28e70701cbcb27948874a556e878ea1f, type: 3}
-  - {fileID: 8300000, guid: 5405d5be08a361041be9f9d37efb0487, type: 3}
-  - {fileID: 8300000, guid: 58a3c7aa41486ce4080be69a73e133a4, type: 3}
-  - {fileID: 8300000, guid: 45c5e4d72e9248744b6b366af7836016, type: 3}
 --- !u!195 &195228332066921804
 NavMeshAgent:
   m_ObjectHideFlags: 1

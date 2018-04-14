@@ -29,13 +29,13 @@ public class PlayerController : Unit {
     {
         /**************控制移动****************/
         if (Input.GetKey(KeyCode.W) == true)
-            transf.Translate(Vector3.forward * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.forward * speed * Time.deltaTime, Space.World);
         if (Input.GetKey(KeyCode.A) == true)
-            transf.Translate(Vector3.left * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.left * speed * Time.deltaTime, Space.World);
         if (Input.GetKey(KeyCode.D) == true)
-            transf.Translate(Vector3.right * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.right * speed * Time.deltaTime, Space.World);
         if (Input.GetKey(KeyCode.S) == true)
-            transf.Translate(Vector3.back * speed * Time.deltaTime, Space.Self);
+            transf.Translate(Vector3.back * speed * Time.deltaTime, Space.World);
 
         /**************控制旋转***************/
         Vector3 obj = Camera.main.WorldToScreenPoint(transf.position);

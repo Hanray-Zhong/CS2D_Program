@@ -280,7 +280,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1037534331529992}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -29.7, y: 5.4, z: 10.8}
+  m_LocalPosition: {x: -29.7, y: 5.4, z: 62.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4617327526821796}
@@ -933,7 +933,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 12861b439a7b4fe4c9e98b9549efdaa3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 28e70701cbcb27948874a556e878ea1f, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.3
   m_Pitch: 1
@@ -1018,6 +1018,12 @@ MonoBehaviour:
   deadBody: {fileID: 1829235928251908, guid: fc9c2210a21ae0348804d58ff8c289d5, type: 2}
   team: 1
   health: 100
+  Health_text: {fileID: 0}
+  searchArea:
+  - {fileID: 1827339590157658, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 1729714082594368, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 1347745774197934, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 1047702402741494, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
 --- !u!114 &114967405158953082
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1036,12 +1042,6 @@ MonoBehaviour:
   bulletNumber: 0
   bulletTotalNumber: 0
   renewBullet_time: 0
-  music:
-  - {fileID: 8300000, guid: 12861b439a7b4fe4c9e98b9549efdaa3, type: 3}
-  - {fileID: 8300000, guid: 28e70701cbcb27948874a556e878ea1f, type: 3}
-  - {fileID: 8300000, guid: 5405d5be08a361041be9f9d37efb0487, type: 3}
-  - {fileID: 8300000, guid: 58a3c7aa41486ce4080be69a73e133a4, type: 3}
-  - {fileID: 8300000, guid: 45c5e4d72e9248744b6b366af7836016, type: 3}
 --- !u!195 &195856901189210648
 NavMeshAgent:
   m_ObjectHideFlags: 1
