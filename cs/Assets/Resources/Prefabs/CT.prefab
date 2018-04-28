@@ -1020,10 +1020,10 @@ MonoBehaviour:
   health: 100
   Health_text: {fileID: 0}
   searchArea:
-  - {fileID: 1827339590157658, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
-  - {fileID: 1729714082594368, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
-  - {fileID: 1347745774197934, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
-  - {fileID: 1047702402741494, guid: 6c4d7fc43aa40d34da05884a68679585, type: 2}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &114967405158953082
 MonoBehaviour:
   m_ObjectHideFlags: 1
